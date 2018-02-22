@@ -1,6 +1,6 @@
 # lagom-play-services-template #
 
-[![GitHub version]](https://github.com/hitachi-dsg/lagom-play-services-template/releases) 
+[![GitHub version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/hitachi-dsg/lagom-play-services-template/releases)
 
 
 lagom-play-services-template is a lagom + play services project template for developers.
@@ -38,6 +38,10 @@ To run with in Development environment
 $ sbt runAll
 ```
 
+
 Browse the application via url http://localhost:9000/service-a
 
-
+## TODO'S
+----------
+Need to resolve conductR based bundle start issue
+Need to add aws docker image capability to suite the delivery pipeline 
