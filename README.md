@@ -37,3 +37,7 @@ To run with in Development environment
 ```
 $ sbt runAll
 ```
+## TODO'S
+----------
+Need to resolve conductR based bundle start issue
+Need to add aws docker image capability to suite the delivery pipeline
