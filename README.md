@@ -1,6 +1,7 @@
 # lagom-play-services-template #
 
 [![GitHub version]](https://github.com/hitachi-dsg/lagom-play-services-template/releases) 
+[![GitHub version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/hitachi-dsg/lagom-play-services-template/releases)
 
 
 lagom-play-services-template is a lagom + play services project template for developers.
