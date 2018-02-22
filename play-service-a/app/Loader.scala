@@ -3,7 +3,7 @@ import com.lightbend.lagom.scaladsl.client.LagomServiceClientComponents
 import com.lightbend.lagom.scaladsl.devmode.LagomDevModeComponents
 import com.softwaremill.macwire._
 import com.typesafe.conductr.bundlelib.lagom.scaladsl.ConductRApplicationComponents
-import controllers.{AssetsComponents, PassivDataAPIService}
+import controllers.{AssetsComponents, PlayServiceA}
 import play.api.ApplicationLoader.Context
 import play.api.libs.ws.ahc.AhcWSComponents
 import play.api.{ApplicationLoader, BuiltInComponentsFromContext, Mode}
@@ -21,25 +21,25 @@ abstract class WebGateway(context: Context) extends BuiltInComponentsFromContext
   with LagomServiceClientComponents {
 
   override lazy val serviceInfo: ServiceInfo = ServiceInfo(
-    "passiv-data-api",
+    "play-service-a",
 
     Map(
-      "passiv-data-api" -> immutable.Seq(ServiceAcl.forPathRegex("(?!/api/).*"))
+      "play-service-a" -> immutable.Seq(ServiceAcl.forPathRegex("(?!/api/).*"))
     )
   )
   override implicit lazy val executionContext: ExecutionContext = actorSystem.dispatcher
 
   override lazy val router = {
-    val prefix = "/"
+    val prefix = "/service-a"
     wire[Routes]
   }
 
 
-  lazy val main = wire[PassivDataAPIService]
+  lazy val main = wire[PlayServiceA]
 
 }
 
-class WebGatewayLoader extends ApplicationLoader {
+class PlayServiceALoader extends ApplicationLoader {
   override def load(context: Context) = context.environment.mode match {
     case Mode.Dev =>
       (new WebGateway(context) with LagomDevModeComponents).application

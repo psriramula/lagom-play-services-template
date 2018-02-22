@@ -37,3 +37,7 @@ To run with in Development environment
 ```
 $ sbt runAll
 ```
+
+Browse the application via url http://localhost:9000/service-a
+
+
